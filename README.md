@@ -33,5 +33,5 @@ By setting the Duration to `-1` you will see the scoreboard as long as you live 
 You can set the score of something with a specific name. You may use color codes. 
 *Keep in mind that you can only use integers for the score!*
 
-#### sb.removeScore(int score, Player player);
-This option will remove the player completely from the scoreboard.
+#### sb.removeScore(int score, String scoreName);
+This option will remove the score of something called by its scorename completely from the scoreboard.
