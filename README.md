@@ -29,8 +29,9 @@ You can set the title of the Scoreboard. You can also use color codes.
 This sets the duration how long the scoreboard should be displayed.
 By setting the Duration to `-1` you will see the scoreboard as long as you live (a long time hopefully).
 
-#### sb.setScore(int score, Player player);
-You can set the Score of a specific player. *Keep in mind that you can only use integers for the score!*
+#### sb.setScore(int score, String scoreName);
+You can set the score of something with a specific name. You may use color codes. 
+*Keep in mind that you can only use integers for the score!*
 
 #### sb.removeScore(int score, Player player);
 This option will remove the player completely from the scoreboard.
