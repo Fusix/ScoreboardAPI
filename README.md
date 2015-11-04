@@ -2,10 +2,10 @@
 
 ## How to use
 
-First you have to initialize the ScoreboardAPI and pass its instance to a variable.
+First you have to initialize a scoreboard and pass its instance to a variable. You can set your starting values here. You can change them later by using the methods mentioned below.
 
 ```java
-ScoreboardAPI sb = new ScoreboardAPI();
+Scoreboard sb = ScoreboardAPI.newScoreboard("dummy", "myScoreBoard", -1);
 ```
 
 You have several options to choose e.g what kind of scoreboard you want and what should be displayed. You can also set the time you want the scoreboard to be displayed.
@@ -33,5 +33,5 @@ By setting the Duration to `-1` you will see the scoreboard as long as you live 
 You can set the score of something with a specific name. You may use color codes. 
 *Keep in mind that you can only use integers for the score!*
 
-#### sb.removeScore(int score, String scoreName);
+#### sb.removeScore(String scoreName);
 This option will remove the score of something called by its scorename completely from the scoreboard.
