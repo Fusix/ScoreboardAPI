@@ -2,10 +2,10 @@
 
 ## How to use
 
-First you have to initialize the ScoreboardAPI.
+First you have to initialize the ScoreboardAPI and pass its instance to a variable.
 
 ```java
-//code here
+ScoreboardAPI sb = new ScoreboardAPI();
 ```
 
 You have several options to choose e.g what kind of scoreboard you want and what should be displayed. You can also set the time you want the scoreboard to be displayed.
