@@ -31,3 +31,6 @@ By setting the Duration to `-1` you will see the scoreboard as long as you live 
 
 #### sb.setScore(int score, Player player);
 You can set the Score of a specific player. *Keep in mind that you can only use integers for the score!*
+
+#### sb.removeScore(int score, Player player);
+This option will remove the player completely from the scoreboard.
