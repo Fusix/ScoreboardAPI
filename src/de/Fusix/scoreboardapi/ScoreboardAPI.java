@@ -21,7 +21,7 @@ public class ScoreboardAPI extends JavaPlugin {
 				scoreboards.get(i).apply(player);
 				break;
 			}
-		}
+        }
 	}
 	
 }
