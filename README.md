@@ -46,3 +46,17 @@ This option will remove all scores saved to the scoreboard.
 
 #### sb.apply(Player player);
 Applying your configured scoreboard to a Player is easy. Just use the method above and pass in the player who should see the scoreboard.
+
+____
+
+## Code examples
+
+```java
+...
+Scoreboard sb = ScoreboardAPI.newScoreboard("dummy", "HealthBoard", -1);
+....
+@EventHandler
+public void onPlayerDamage(PlayerDamageEvent e) {
+    sb.loadPreset(ScoreboardPreset.Health);
+}
+```
