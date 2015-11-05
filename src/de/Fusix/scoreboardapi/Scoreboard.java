@@ -46,6 +46,11 @@ public class Scoreboard {
         sb.resetScores(scoreName);
     }
     
+    public void removeAllScores() {
+		for(String key : scores.keySet()) sb.resetScores(key);
+		scores = new HashMap<>();
+	}
+    
     public String getName() {
         return o.getDisplayName();
     }
