@@ -61,3 +61,6 @@ public void onPlayerJoin(PlayerJoinEvent e) {
     sb.apply(e.getPlayer());
 }
 ```
+This Example would look like this:
+
+![alt tag](http://puu.sh/laAGM/436c8d2d0b.png)
