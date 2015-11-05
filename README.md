@@ -1,4 +1,5 @@
 # ScoreboardAPI
+## Status: `in progress`
 
 ## How to use
 
