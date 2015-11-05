@@ -56,7 +56,8 @@ ____
 Scoreboard sb = ScoreboardAPI.newScoreboard("dummy", "HealthBoard", -1);
 ....
 @EventHandler
-public void onPlayerDamage(PlayerDamageEvent e) {
+public void onPlayerJoin(PlayerJoinEvent e) {
     sb.loadPreset(ScoreboardPreset.Health);
+    sb.apply(e.getPlayer());
 }
 ```
