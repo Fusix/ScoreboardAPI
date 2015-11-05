@@ -41,5 +41,5 @@ You can set the score of something with a specific name. You may use color codes
 #### sb.removeScore(String scoreName);
 This option will remove the score of something called by its scorename completely from the scoreboard.
 
-### sb.apply(Player player);
+#### sb.apply(Player player);
 Applying your configured scoreboard to a Player is easy. Just use the method above and pass in the player who should see the scoreboard.
