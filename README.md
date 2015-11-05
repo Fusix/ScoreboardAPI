@@ -64,3 +64,7 @@ public void onPlayerJoin(PlayerJoinEvent e) {
 This Example would look like this:
 
 ![alt tag](http://puu.sh/laAGM/436c8d2d0b.png)
+
+By changing `ScoreboardPreset.Health` to `ScoreboardPreset.Health2` the result would look like this:
+
+![alt tag](http://puu.sh/laB3C/4024738792.png)
