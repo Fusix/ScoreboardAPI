@@ -8,10 +8,11 @@ import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 
 public class Scoreboard {
-    
+            
     private org.bukkit.scoreboard.Scoreboard sb;
     private Objective o;
     private String title;
+    private int duration;
     private HashMap<String, Integer> scores = new HashMap<>();
     
     public Scoreboard(String type, String title, int duration) {
@@ -20,15 +21,19 @@ public class Scoreboard {
         this.title = title;
         o.setDisplayName(title);
         o.setDisplaySlot(DisplaySlot.SIDEBAR);
+        startDisplayDuration();
+    }
+    
+    private void startDisplayDuration() {
         if(duration < -1) {
             throw new IllegalArgumentException("duration must be -1 or greater");
         } else if(duration != -1) {
-            Bukkit.getScheduler().scheduleSyncDelayedTask(ScoreboardAPI.getInstance(), new Runnable() {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(ScoreboardAPI.getPlugin(ScoreboardAPI.class), new Runnable() {
                 @Override
                 public void run() {
                     for(Player p : Bukkit.getServer().getOnlinePlayers()) {
                         if(p.getScoreboard().equals(sb)) {
-                            p.setScoreboard(null);
+                            p.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
                         }
                     }
                 }
@@ -66,8 +71,9 @@ public class Scoreboard {
         o = sb.registerNewObjective(title, type);
     }
     
-    public static void setDuration() {
-        
+    public void setDuration(int duration) {
+        this.duration = duration;
+        startDisplayDuration();
     }
 
     public void setScore(int score, String scoreName) {
