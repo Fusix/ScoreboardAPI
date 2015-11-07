@@ -43,6 +43,9 @@ This option will remove all scores saved to the scoreboard.
 #### sb.apply(Player player);
 Applying your configured scoreboard to a Player is easy. Just use the method above and pass in the player who should see the scoreboard.
 
+#### sb.revoke(Player player);
+You can easily remove the scoreboard of a specific player by using this method.
+
 ## Loading Presets
 
 #### sb.loadPreset(ScoreboardPreset sbp);
