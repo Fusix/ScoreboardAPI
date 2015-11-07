@@ -1,5 +1,5 @@
 # ScoreboardAPI
-## Status: `in progress`
+## Status: `open for first tests`
 
 ## How to use
 
