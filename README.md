@@ -45,6 +45,15 @@ Applying your configured scoreboard to a Player is easy. Just use the method abo
 
 ____
 
+## Loading Presets
+
+#### sb.loadPreset(ScoreboardPreset sbp);
+By invoking this method you will overwrite every changes you have been made to the scoreboard with a preset.
+Available presets: `Health`, `Health2`
+For an example see below in the `Code examples` section.
+
+____
+
 ## Code examples
 
 ```java
