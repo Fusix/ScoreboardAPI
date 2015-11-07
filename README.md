@@ -26,14 +26,9 @@ At this point you can set the type of the Scoreboard. In other words what your s
 #### sb.setTitle(String title);
 You can set the title of the Scoreboard. You can also use color codes.
 
-___
-*Not implemented yet!*
-```text
-sb.setDuration(int time);
+### sb.setDuration(int time);
 This sets the duration how long the scoreboard should be displayed.
 By setting the Duration to `-1` you will see the scoreboard as long as you live (a long time hopefully).
-```
-___
 
 #### sb.setScore(int score, String scoreName);
 You can set the score of something with a specific name. You may use color codes. 
