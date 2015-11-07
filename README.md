@@ -43,16 +43,12 @@ This option will remove all scores saved to the scoreboard.
 #### sb.apply(Player player);
 Applying your configured scoreboard to a Player is easy. Just use the method above and pass in the player who should see the scoreboard.
 
-____
-
 ## Loading Presets
 
 #### sb.loadPreset(ScoreboardPreset sbp);
 By invoking this method you will overwrite every changes you have been made to the scoreboard with a preset.
 Available presets: `Health`, `Health2`
 For an example see below in the `Code examples` section.
-
-____
 
 ## Code examples
 
