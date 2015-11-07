@@ -98,5 +98,9 @@ public class Scoreboard {
     public void apply(Player player) {
         player.setScoreboard(sb);
     }
+    
+    public void revoke(Player player) {
+		player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+    }
 
 }
