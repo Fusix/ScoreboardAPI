@@ -100,7 +100,7 @@ public class Scoreboard {
     }
     
     public void revoke(Player player) {
-		player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+	player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
     }
 
 }
