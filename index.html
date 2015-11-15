@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Scoreboardapi : ScoreboardAPI to use with Bukkit 1.8">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Scoreboardapi</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Fusix/ScoreboardAPI">View on GitHub</a>
+
+          <h1 id="project_title">Scoreboardapi</h1>
+          <h2 id="project_tagline">ScoreboardAPI to use with Bukkit 1.8</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Fusix/ScoreboardAPI/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Fusix/ScoreboardAPI/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="scoreboardapi" class="anchor" href="#scoreboardapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>ScoreboardAPI</h1>
+
+<h2>
+<a id="status-open-for-first-tests" class="anchor" href="#status-open-for-first-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Status: <code>open for first tests</code>
+</h2>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>First you have to initialize a scoreboard and pass its instance to a variable. You can set your starting values here. You can change them later by using the methods mentioned below.</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Scoreboard</span> sb <span class="pl-k">=</span> <span class="pl-smi">ScoreboardAPI</span><span class="pl-k">.</span>newScoreboard(<span class="pl-s"><span class="pl-pds">"</span>dummy<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>myScoreBoard<span class="pl-pds">"</span></span>, <span class="pl-k">-</span><span class="pl-c1">1</span>);</pre></div>
+
+<p>You have several options to choose e.g what kind of scoreboard you want and what should be displayed. You can also set the time you want the scoreboard to be displayed.</p>
+
+<h4>
+<a id="sbsettypestring-type" class="anchor" href="#sbsettypestring-type" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.setType(String type);</h4>
+
+<p>At this point you can set the type of the Scoreboard. In other words what your scoreboard is supposed to display.</p>
+
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dummy</td>
+<td>Score is only changed by commands, and not by game events such as death. This is useful for event flags, state mappings, and currencies.</td>
+</tr>
+<tr>
+<td>trigger</td>
+<td>Score is only changed by commands, and not by game events such as death. The /trigger command can be used by a player to set or increment/decrement their own score in an objective with this criteria. The /trigger command will fail if the objective has not been "enabled" for the player using it, and the objective will be disabled for the player after they use the /trigger command on it. Note that the /trigger command can be used by ordinary players even if Cheats are off and they are not an Operator. This is useful for player input via /tellraw interfaces.</td>
+</tr>
+<tr>
+<td>deathCount</td>
+<td>Score increments automatically for a player when they die.</td>
+</tr>
+<tr>
+<td>playerKillCount</td>
+<td>Score increments automatically for a player when they kill another player.</td>
+</tr>
+<tr>
+<td>totalKillCount</td>
+<td>Score increments automatically for a player when they kill another player or a mob.</td>
+</tr>
+<tr>
+<td>health</td>
+<td>Ranges from 0 to 20 on a normal player; represents the amount of half-hearts the player has. May appear as 0 for players before their health has changed for the first time. Extra hearts and absorption hearts also count to the health score, meaning that with Attributes/Modifiers or the Health Boost or Absorption status effects, health can far surpass 20.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>
+<a id="sbsettitlestring-title" class="anchor" href="#sbsettitlestring-title" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.setTitle(String title);</h4>
+
+<p>You can set the title of the Scoreboard. You can also use color codes.</p>
+
+<h4>
+<a id="sbsetdurationint-time" class="anchor" href="#sbsetdurationint-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.setDuration(int time);</h4>
+
+<p>This sets the duration how long the scoreboard should be displayed.
+By setting the Duration to <code>-1</code> you will see the scoreboard as long as you live (a long time hopefully).</p>
+
+<h4>
+<a id="sbsetscoreint-score-string-scorename" class="anchor" href="#sbsetscoreint-score-string-scorename" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.setScore(int score, String scoreName);</h4>
+
+<p>You can set the score of something with a specific name. You may use color codes. 
+<em>Keep in mind that you can only use integers for the score!</em></p>
+
+<h4>
+<a id="sbremovescorestring-scorename" class="anchor" href="#sbremovescorestring-scorename" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.removeScore(String scoreName);</h4>
+
+<p>This option will remove the score of something called by its scorename completely from the scoreboard.</p>
+
+<h4>
+<a id="sbremoveallscores" class="anchor" href="#sbremoveallscores" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.removeAllScores();</h4>
+
+<p>This option will remove all scores saved to the scoreboard.</p>
+
+<h4>
+<a id="sbapplyplayer-player" class="anchor" href="#sbapplyplayer-player" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.apply(Player player);</h4>
+
+<p>Applying your configured scoreboard to a Player is easy. Just use the method above and pass in the player who should see the scoreboard.</p>
+
+<h4>
+<a id="sbrevokeplayer-player" class="anchor" href="#sbrevokeplayer-player" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.revoke(Player player);</h4>
+
+<p>You can easily remove the scoreboard of a specific player by using this method.</p>
+
+<h2>
+<a id="loading-presets" class="anchor" href="#loading-presets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading Presets</h2>
+
+<h4>
+<a id="sbloadpresetscoreboardpreset-sbp" class="anchor" href="#sbloadpresetscoreboardpreset-sbp" aria-hidden="true"><span class="octicon octicon-link"></span></a>sb.loadPreset(ScoreboardPreset sbp);</h4>
+
+<p>By invoking this method you will overwrite every changes you have been made to the scoreboard with a preset.
+Available presets: <code>Health</code>, <code>Health2</code>
+For an example see below in the <code>Code examples</code> section.</p>
+
+<h2>
+<a id="code-examples" class="anchor" href="#code-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code examples</h2>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c1">...</span>
+<span class="pl-smi">Scoreboard</span> sb <span class="pl-k">=</span> <span class="pl-smi">ScoreboardAPI</span><span class="pl-k">.</span>newScoreboard(<span class="pl-s"><span class="pl-pds">"</span>dummy<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>HealthBoard<span class="pl-pds">"</span></span>, <span class="pl-k">-</span><span class="pl-c1">1</span>);
+<span class="pl-c1">....</span>
+@<span class="pl-smi">EventHandler</span>
+<span class="pl-k">public</span> <span class="pl-k">void</span> onPlayerJoin(<span class="pl-smi">PlayerJoinEvent</span> e) {
+    sb<span class="pl-k">.</span>loadPreset(<span class="pl-smi">ScoreboardPreset</span><span class="pl-k">.</span><span class="pl-smi">Health</span>);
+    sb<span class="pl-k">.</span>apply(e<span class="pl-k">.</span>getPlayer());
+}</pre></div>
+
+<p>This Example would look like this:</p>
+
+<p><img src="http://puu.sh/laAGM/436c8d2d0b.png" alt="alt tag"></p>
+
+<p>By changing <code>ScoreboardPreset.Health</code> to <code>ScoreboardPreset.Health2</code> the result would look like this:</p>
+
+<p><img src="http://puu.sh/laB3C/4024738792.png" alt="alt tag"></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Scoreboardapi maintained by <a href="https://github.com/Fusix">Fusix</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
